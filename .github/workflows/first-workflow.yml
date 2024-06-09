@@ -5,7 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: step 1
-        run: 
+        run: |
           echo "Hello"
+          echo "second line"
+          echo "third line"
       - name: step 2
-        run: echo "Bye"
+        run: |
+          echo "Bye"
+          echo "-----"
