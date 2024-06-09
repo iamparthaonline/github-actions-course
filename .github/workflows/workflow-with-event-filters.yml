@@ -1,4 +1,4 @@
-name: Workflow with Events
+name: Workflow with Event Filter
 on:
   push:
     branches:
