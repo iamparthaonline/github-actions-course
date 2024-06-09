@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+      - feature/* #feature/hello | feature/hello-world
+      - feature/** # feature/hello/world
+    paths:
+      - "temp.md"
 jobs:
   first-job:
     runs-on: ubuntu-latest
