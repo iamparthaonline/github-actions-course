@@ -10,3 +10,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "14.17.6"
+      - name: Install Dependencies for Project
+        run: npm i
+      - name: Check Unit Test Cases
+        run: npm run test
