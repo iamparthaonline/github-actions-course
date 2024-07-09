@@ -14,3 +14,5 @@ jobs:
         run: npm i
       - name: Check Unit Test Cases
         run: npm run test
+      - name: Success
+        run: echo "Successfully done!"
