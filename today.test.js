@@ -1,7 +1,7 @@
 const getToday = require("./today");
 
 test("It should return a string", () => {
-  expect(typeof getToday()).toBe("number");
+  expect(typeof getToday()).toBe("string");
 });
 
 test("It should return today's day", () => {
