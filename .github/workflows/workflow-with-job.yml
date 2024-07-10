@@ -1,0 +1,23 @@
+name: Workflow with Jobs
+on: workflow_dispatch
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Repositary
+        uses: actions/checkout@v4
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14.17.6"
+      - name: Install Dependencies for Project
+        run: npm i
+      - name: Check Unit Test Cases
+        run: npm run test
+      - name: Success
+        run: echo "Successfully done!"
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print something
+        run: echo "Echoing from Job 2"
