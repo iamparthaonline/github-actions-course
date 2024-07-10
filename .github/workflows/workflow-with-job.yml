@@ -22,3 +22,8 @@ jobs:
     steps:
       - name: Print something
         run: echo "Echoing from Job 2"
+  job-3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Paraller Job
+        run: echo "Echoing from Job 3"
