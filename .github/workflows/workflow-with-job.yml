@@ -17,6 +17,7 @@ jobs:
       - name: Success
         run: echo "Successfully done!"
   job-2:
+    needs: job-1
     runs-on: ubuntu-latest
     steps:
       - name: Print something
