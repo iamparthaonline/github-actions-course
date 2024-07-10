@@ -27,3 +27,5 @@ jobs:
     steps:
       - name: Paraller Job
         run: echo "Echoing from Job 3"
+      - name: Printing Github Context
+        run: echo "Github Context - ${{ toJSON(github) }}"
