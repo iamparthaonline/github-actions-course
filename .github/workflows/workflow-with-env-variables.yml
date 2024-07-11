@@ -6,6 +6,7 @@ jobs:
   job-1:
     env:
       API_KEY: 1234
+      HOSTNAME: Job-level-host
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Repositary
@@ -25,3 +26,5 @@ jobs:
     steps:
       - name: Print Jobname
         run: echo "Echoing from Job 2"
+      - name: Success
+        run: echo "Successfully started! $HOSTNAME"
