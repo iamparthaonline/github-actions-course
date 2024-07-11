@@ -4,10 +4,14 @@ env:
   HOSTNAME: Workflow-level-host
 jobs:
   job-1:
+    env:
+      API_KEY: 1234
     runs-on: ubuntu-latest
     steps:
       - name: Fetch Repositary
         uses: actions/checkout@v4
+      - name: Print API key
+        run: echo "Env value - ${{env.API_KEY}}"
       - name: Install Node JS
         uses: actions/setup-node@v4
         with:
