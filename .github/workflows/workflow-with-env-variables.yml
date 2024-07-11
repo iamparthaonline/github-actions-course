@@ -23,10 +23,15 @@ jobs:
         run: echo "Successfully started! $HOSTNAME"
       - name: Accessing Secrets
         run: echo "Username Secret Value - ${{secrets.USERNAME}}"
+      - name: Print Env Specific Values
+        run: echo "Username - $USERNAME || Password - $PASSWORD"
   job-2:
+    environment: testing
     runs-on: ubuntu-latest
     steps:
       - name: Print Jobname
         run: echo "Echoing from Job 2"
       - name: Success
         run: echo "Successfully started! $HOSTNAME"
+      - name: Print Env Specific Values
+        run: echo "Username - $USERNAME || Password - $PASSWORD"
