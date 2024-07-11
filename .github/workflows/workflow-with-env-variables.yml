@@ -34,4 +34,4 @@ jobs:
       - name: Success
         run: echo "Successfully started! $HOSTNAME"
       - name: Print Env Specific Values
-        run: echo "Username - $USERNAME || Password - $PASSWORD"
+        run: echo "Username - ${{env.USERNAME}} || Password - ${{secrets.PASSWORD}}"
