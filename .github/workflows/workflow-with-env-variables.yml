@@ -14,8 +14,6 @@ jobs:
           node-version: "14.17.6"
       - name: Install Dependencies for Project
         run: npm i
-      - name: Run Project
-        run: npm start
       - name: Success
         run: echo "Successfully started! $HOSTNAME"
   job-2:
