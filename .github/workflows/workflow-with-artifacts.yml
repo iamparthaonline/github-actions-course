@@ -1,0 +1,27 @@
+name: Workflow with Artifacts
+on: workflow_dispatch
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Repositary
+        uses: actions/checkout@v4
+
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14.17.6"
+      - name: Install Dependencies for Project
+        run: npm i
+      - name: Run Test Cases Report
+        run: npx jest --coverage
+      - name: Upload Test Reports as Artifacts
+        uses: echapmanFromBunnings/upload-artifact@3.0
+        with:
+          name: "Test Cases Report"
+          path: "coverage"
+  job-2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Jobname
+        run: echo "Echoing from Job 2"

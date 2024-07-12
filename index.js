@@ -1,5 +1,5 @@
 const http = require("http");
-const getToday = require("./today");
+const getToday = require("./src/today");
 
 const server = http.createServer(function (request, response) {
   console.dir(request.param);
