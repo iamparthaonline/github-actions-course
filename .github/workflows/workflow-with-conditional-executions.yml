@@ -14,8 +14,10 @@ jobs:
       - name: Install Dependencies for Project
         run: npm i
       - name: Run Test Cases Report
+        id: test-cases-step
         run: npx jest --coverage
       - name: Upload Test Report Artifact
+        if: failure() && steps.test-cases-step.outcome == 'failure'
         uses: actions/upload-artifact@v4
         with:
           name: test-report-file
