@@ -1,0 +1,36 @@
+name: Workflow with Conditional Executions
+on: workflow_dispatch
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch Repositary
+        uses: actions/checkout@v4
+
+      - name: Install Node JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14.17.6"
+      - name: Install Dependencies for Project
+        run: npm i
+      - name: Run Test Cases Report
+        run: npx jest --coverage
+      - name: Upload Test Report Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report-file
+          path: |
+            coverage
+            package.json
+  job-2:
+    needs: job-1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Jobname
+        run: echo "Echoing from Job 2"
+      - name: Download Test Report FIle
+        uses: actions/download-artifact@v4
+        with:
+          name: test-report-file
+      - name: Verify Artifact Download
+        run: ls
