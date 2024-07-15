@@ -17,7 +17,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          keys: deps-npm-modules-${{hashFiles('**/package-lock.json')}}
+          key: deps-npm-modules-${{hashFiles('**/package-lock.json')}}
       - name: Install Dependencies for Project
         run: npm ci
       - name: Set Value for Job Output
